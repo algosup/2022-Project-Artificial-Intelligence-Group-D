@@ -17,7 +17,9 @@
 ## 1. Introduction
 
 ### a. Overview
-<!-- ! TODO -->
+
+In the school, during project time when the students work in autonomy, they are expected to speak english, but they are often speaking french.</br>We are building an intelligent device that can recognize if the people are speaking french or english.</br>
+It will turn on a red Led when people are speaking french.
 
 Summary of the problem (from the perspective of the user), the context, suggested solution, and the stakeholders. 
 
@@ -25,7 +27,7 @@ Summary of the problem (from the perspective of the user), the context, suggeste
 
 | Terms | Definitions |
 | ----- | ----------- |
-| AI    | Artificial Intelligence |
+| AI    | Artificial Intelligence : the theory and development of computer systems able to perform tasks normally requiring human intelligence, such as visual perception, speech recognition, decision-making, and translation between languages |
 | DL | Deep Learning : It was created by drawing inspiration from the neural networks found in the human brain, which means that deep learning is made up of a large number of layers of interconnected artificial neurons, hence the name "deep learning". |
 
 ### c. Context
@@ -46,7 +48,8 @@ Product requirements in the form of user stories
 Technical requirements
 
 ### e. Out of Scope
-<!-- ! TODO -->
+The device will not speak.
+The device will not translate french to english.
 
 Product and technical requirements that will be disregarded
 
@@ -174,7 +177,7 @@ How accessible is the solution?
 What tools will you use to evaluate its accessibility? 
 
 ### e. Risks
-<!-- ! TODO -->
+The model can't recognize the language speaking because of the accent, the noise or multiple speakers.
 
 What risks are being undertaken with this solution?
 Are there risks that once taken can’t be walked back?
@@ -209,15 +212,19 @@ Time estimates for how long each task needs to be completed
 -> Link to the github project
 
 ### b. Prioritization
-<!-- ! TODO -->
+Build a dataset of english and french speaking. </br>
 
 Categorization of tasks by urgency and impact
 
 ### c. Milestones
-<!-- ! TODO -->
+Make a dataset </br>
+Train the machine learning model </br>
+Deploy it to the Microcontroller </br>
+Control it with a webpage.</br>
 
 Dated checkpoints when significant chunks of work will have been completed
 Metrics to indicate the passing of the milestone
 d. Future work
+Build an English speaker accent recognition </br>
 
 List of tasks that will be completed in the future
