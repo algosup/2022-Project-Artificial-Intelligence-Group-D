@@ -1,43 +1,223 @@
+<!-- doc: https://stackoverflow.blog/2020/04/06/a-practical-guide-to-writing-technical-specs/ -->
+
 # Technical Specification
 
-## 2022 Project Artificial Intelligence Group D
-
-The project began April 25<sup>th</sup> 2022 and will end June 27<sup>th</sup> 2022.
-
-This Project is create by a team composed of :
-
-- [Paul Maris](https://github.com/PaulMarisOUMary) 
-- [Remy Charles](https://github.com/RemyCHARLES)
-- [Pierre Gorin](https://github.com/Pierre2103)
-- [Karine Vinette](https://github.com/KarineVinette)
-- [Malo Archimbaud](https://github.com/Malo-Archimbaud)
-- [Romain Nicolaon](https://github.com/RomainNicolaon)
-
----
-
-<details><summary>Table of Contents</summary>
-
-</details>
-
----
+- 2022 Project Artificial Intelligence Group D
+- Written by: Paul, Remy
+- Team:
+    - [Karine Vinette](https://github.com/KarineVinette)
+    - [Malo Archimbaud](https://github.com/Malo-Archimbaud)
+    - [Paul Maris](https://github.com/PaulMarisOUMary) 
+    - [Pierre Gorin](https://github.com/Pierre2103)
+    - [Remy Charles](https://github.com/RemyCHARLES)
+    - [Romain Nicolaon](https://github.com/RomainNicolaon)
+- Created on: 2020-04-01
+- Last updated on: 2020-04-01
 
 ## 1. Introduction
 
-### a. Overview 
+### a. Overview
+<!-- ! TODO -->
 
-The entire of this project must be done in **Python 3.9.12**. We hace decided to use this version and not the latest because we use differents libraries like **TensorFlow** or **Numpy** and this allows us to avoid potential problems.
+Summary of the problem (from the perspective of the user), the context, suggested solution, and the stakeholders. 
 
 ### b. Glossary
 
-| terms | definitions |
-|-|-|
-| AI | Artificial Intelligence |
+| Terms | Definitions |
+| ----- | ----------- |
+| AI    | Artificial Intelligence |
 | DL | Deep Learning : It was created by drawing inspiration from the neural networks found in the human brain, which means that deep learning is made up of a large number of layers of interconnected artificial neurons, hence the name "deep learning". |
 
-### c. Product and Technical Requirements
+### c. Context
+<!-- ! TODO -->
 
-| Technical | Using |
-|-|-|
-|[Python](https://www.python.org/) | We code with Python is the best language in order to create a machine learning. | 
-|[TensorFlow](https://www.tensorflow.org/) | TensorFlow is a library for running machine learning and deep learning applications.|
-|[NumPy](https://numpy.org/) | NumPy is an essential library that allows us to create array tables to organize our data. |
+Reasons why the problem is worth solving
+Origin of the problem
+How the problem affects users and company goals
+Past efforts made to solve the solution and why they were not effective
+How the product relates to team goals, OKRs
+How the solution fits into the overall product roadmap and strategy
+How the solution fits into the technical strategy
+
+### d. Goals
+<!-- ! TODO -->
+
+Product requirements in the form of user stories 
+Technical requirements
+
+### e. Out of Scope
+<!-- ! TODO -->
+
+Product and technical requirements that will be disregarded
+
+### f. Assumptions
+<!-- ! TODO -->
+
+Conditions and resources that need to be present and accessible for the solution to work as described. 
+
+## 2. Solutions
+
+### a. Current or Existing Solution / Design
+<!-- ! TODO -->
+
+Current solution description
+Pros and cons of the current solution
+
+### b. Suggested or Proposed Solution / Design 
+<!-- ! TODO -->
+
+External components that the solution will interact with and that it will alter
+Dependencies of the current solution
+Pros and cons of the proposed  solution 
+Data Model / Schema Changes
+Schema definitions
+New data models
+Modified data models
+Data validation methods
+Business Logic
+API changes
+Pseudocode
+Flowcharts
+Error states
+Failure scenarios
+Conditions that lead to errors and failures
+Limitations
+Presentation Layer
+User requirements
+UX changes
+UI changes
+Wireframes with descriptions
+Links to UI/UX designer’s work
+Mobile concerns
+Web concerns
+UI states
+Error handling
+Other questions to answer
+How will the solution scale?
+What are the limitations of the solution?
+How will it recover in the event of a failure?
+How will it cope with future requirements?
+
+### c. Technical Requirements
+
+- Python
+    - Version `3.9.X`
+    - Why ?
+    Python is an interpreted and dynamic programming language which is ideal to work AI.
+- Tensorflow
+    - Version `2.8.X`
+    - Why ?
+    Tensorflow is a library for machine learning.
+- NumPy
+    - Version `1.22.X`
+    - Why ?
+    NumPy is a library written in `C` with the purpose of better efficiency, rather than using python default list-type we'll use `numpy.array`.
+- Matplotlib
+    - Version `3.5.X`
+    - Why ?
+    Matplotlib is a library for plotting graphs, we'll use this library especialy for rendering spectrograms of the sound.
+
+
+### d. Test Plan
+<!-- ! TODO -->
+
+Explanations of how the tests will make sure user requirements are met
+Unit tests
+Integrations tests
+QA
+
+### e. Release / Roll-out and Deployment Plan
+<!-- ! TODO -->
+
+Deployment architecture 
+Deployment environments
+Phased roll-out plan e.g. using feature flags
+Plan outlining how to communicate changes to the users, for example, with release notes
+
+### f. Alternate Solutions / Designs
+<!-- ! TODO -->
+
+Short summary statement for each alternative solution
+Pros and cons for each alternative
+Reasons why each solution couldn’t work 
+Ways in which alternatives were inferior to the proposed solution
+Migration plan to next best alternative in case the proposed solution falls through
+
+-> Speetch to text
+
+## 3. Further Considerations
+
+### a. Cost analysis
+<!-- ! TODO -->
+
+What is the cost to run the solution per day?
+What does it cost to roll it out? 
+
+### b. Security considerations
+<!-- ! TODO -->
+
+What are the potential threats?
+How will they be mitigated?
+How will the solution affect the security of other components, services, and systems?
+
+### c. Privacy considerations
+<!-- ! TODO -->
+
+Does the solution follow local laws and legal policies on data privacy?
+How does the solution protect users’ data privacy?
+What are some of the tradeoffs between personalization and privacy in the solution? 
+
+### d. Accessibility considerations
+<!-- ! TODO -->
+
+How accessible is the solution?
+What tools will you use to evaluate its accessibility? 
+
+### e. Risks
+<!-- ! TODO -->
+
+What risks are being undertaken with this solution?
+Are there risks that once taken can’t be walked back?
+What is the cost-benefit analysis of taking these risks? 
+
+## 4. Success Evaluation
+
+### a. Impact
+<!-- ! TODO -->
+
+-> Security impact
+-> Performance impact
+Cost impact
+Impact on other components and services
+
+### b. Metrics
+<!-- ! TODO -->
+
+List of metrics to capture
+Tools to capture and measure metrics
+Tests to verify metrics
+
+## 5. Work
+
+### a. Work estimates and timelines
+<!-- ! TODO -->
+
+List of specific, measurable, and time-bound tasks
+Resources needed to finish each task
+Time estimates for how long each task needs to be completed
+
+-> Link to the github project
+
+### b. Prioritization
+<!-- ! TODO -->
+
+Categorization of tasks by urgency and impact
+
+### c. Milestones
+<!-- ! TODO -->
+
+Dated checkpoints when significant chunks of work will have been completed
+Metrics to indicate the passing of the milestone
+d. Future work
+
+List of tasks that will be completed in the future
