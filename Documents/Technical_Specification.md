@@ -3,7 +3,7 @@
 # Technical Specification
 
 - 2022 Project Artificial Intelligence Group D
-- Written by: Paul, Remy
+- Written by: Paul, Remy, Karine
 - Team:
     - [Karine Vinette](https://github.com/KarineVinette)
     - [Malo Archimbaud](https://github.com/Malo-Archimbaud)
@@ -48,7 +48,7 @@ Product requirements in the form of user stories
 Technical requirements
 
 ### e. Out of Scope
-The device will not speak.
+The device will not speak.</br>
 The device will not translate french to english.
 
 Product and technical requirements that will be disregarded
@@ -157,7 +157,10 @@ What is the cost to run the solution per day?
 What does it cost to roll it out? 
 
 ### b. Security considerations
-<!-- ! TODO -->
+The potential threats are that the conversations could be recorded and make it public.</br>
+We don't want to spy the conversations.</br>
+They will be mitigated in erasing the database that keep track of the conversations.</br>
+
 
 What are the potential threats?
 How will they be mitigated?
