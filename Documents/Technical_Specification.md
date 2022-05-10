@@ -3,7 +3,7 @@
 # Technical Specification
 
 - 2022 Project Artificial Intelligence Group D
-- Written by: Paul, Remy, Karine
+- Written by: Paul, Remy, Karine, Pierre
 - Team:
     - [Karine Vinette](https://github.com/KarineVinette)
     - [Malo Archimbaud](https://github.com/Malo-Archimbaud)
@@ -11,8 +11,8 @@
     - [Pierre Gorin](https://github.com/Pierre2103)
     - [Remy Charles](https://github.com/RemyCHARLES)
     - [Romain Nicolaon](https://github.com/RomainNicolaon)
-- Created on: 2020-04-01
-- Last updated on: 2020-04-01
+- Created on: 2022-05-05
+- Last updated on: 2022-10-05
 
 ## 1. Introduction
 
@@ -140,13 +140,16 @@ Plan outlining how to communicate changes to the users, for example, with releas
 ### f. Alternate Solutions / Designs
 <!-- ! TODO -->
 
-Short summary statement for each alternative solution
+~~Short summary statement for each alternative solution~~
 Pros and cons for each alternative
 Reasons why each solution couldn’t work 
 Ways in which alternatives were inferior to the proposed solution
 Migration plan to next best alternative in case the proposed solution falls through
 
--> Speetch to text
+To see this project through we will use the method which use the Fast Fourier Transform(signal processing algorithm), it consist to analyze the waves of the audio and determine the similarities between the english dataset and the english spoken in room.</br>
+We go to use this methods because it's more accurate and faster in the processing of data by the artificial intelligence than the next method that I am going to present you.
+
+We could have chosen to build our project with the speech to text method.</br> This method consists in recovering the pronounced words and sentences and to analyze them to make the distinction between the two language(English/French).</br> This method use the library *pyttsx3*.
 
 ## 3. Further Considerations
 
@@ -215,9 +218,9 @@ Time estimates for how long each task needs to be completed
 -> Link to the github project
 
 ### b. Prioritization
-Build a dataset of english and french speaking. </br>
+Our priority is to build a dataset of English speaking with multiple accent, genders, phonation, pitch, loudness and rate.</br> We go to build something similar for the French speaking.
 
-Categorization of tasks by urgency and impact
+On the management side we need to set our priorities as soon as possible, categorize our tasks by urgency, the first tasks will be the most important.</br> We also need to categorize them by the impact that the tasks will have on the rest of the project.
 
 ### c. Milestones
 Make a dataset </br>
