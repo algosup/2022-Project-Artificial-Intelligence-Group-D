@@ -1,0 +1,15 @@
+# -- Usage -- 
+# $ pip install -r requirements.txt
+
+# -- Show each installed package(s) --
+# $ pip freeze
+
+# -- Uninstall all package(s) --
+# $ pip freeze | xargs pip uninstall -y
+
+matplotlib
+numpy
+pandas
+
+tensorflow == 2.8.0
+# tensorflow-macos == 2.8.0
