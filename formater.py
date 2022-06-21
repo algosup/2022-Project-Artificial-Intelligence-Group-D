@@ -8,11 +8,12 @@ from PIL import Image
 sample_rate = 8000
 image_width = 500
 image_height = 256
-batch_size = 64
 
-def load_audio_file(audio_file_path):
-    warnings.filterwarnings("ignore")
-    audio_segment, _ = lr.load(audio_file_path, sr=sample_rate)
+def load_audio_file(path: str):
+    warnings.filterwarnings("ignore") # suppress librosa warnings
+
+    audio_segment, _ = lr.load(path, sr=sample_rate)
+
     return audio_segment
 
 def spectrogram(audio_segment):
@@ -33,7 +34,7 @@ def spectrogram(audio_segment):
 
     return image_np_scaled[:, 0:image_width]
 
-def to_integer(image_float):
+def to_integer(image_float: np.matrix):
     # range (0,1) -> (0,255)
     image_float_255 = image_float * 255.
     
@@ -42,17 +43,17 @@ def to_integer(image_float):
     
     return image_int
 
-def audio_to_image_file(audio_file):
-    out_image_file = audio_file + '.png'
-    audio = load_audio_file(audio_file)
+def audio_to_image_file(path: str):
+    out_image_file = f"{path}.png"
+    audio = load_audio_file(path)
     if np.count_nonzero(audio) != 0:
         spectro = spectrogram(audio)
         spectro_int = to_integer(spectro)
         imageio.imwrite(out_image_file, spectro_int)
     else:
-        print('WARNING! Detected an empty audio signal. Skipping...')
+        print("WARNING! Detected an empty audio signal. Skipping...")
 
-def spectrogram_to_tensor(path):
+def spectrogram_to_tensor(path: str):
     im = Image.open(path)
     im.thumbnail((image_width, image_height))
 

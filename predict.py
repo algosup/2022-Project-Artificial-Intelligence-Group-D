@@ -13,8 +13,8 @@ interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-def predict(path):
-    test_path = root_directory+path
+def predict(path: str):
+    test_path = f"{root_directory}{path}"
 
     audio_to_image_file(test_path)
     tensor = spectrogram_to_tensor(f"{test_path}.png")
