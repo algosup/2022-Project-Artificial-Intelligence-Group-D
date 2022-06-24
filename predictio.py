@@ -5,12 +5,13 @@ from os.path import dirname, abspath, join
 from formaterio import *
 
 root_directory = dirname(abspath(__file__))
-model_path = join(root_directory, "model.tflite")
+model_path = join(root_directory, "model1.tflite")
 
 interpreter = tf.lite.Interpreter(model_path=model_path)
 interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
+print(input_details)
 output_details = interpreter.get_output_details()
 
 def predict(path: str):
@@ -32,4 +33,6 @@ def predict(path: str):
         print("English", proba)
 
 predict("/wav/french.wav")
-predict("/wav/english.wav")
+#predict("/wav/english.wav")
+#predict("/wav/en_01.wav")
+#predict("/wav/fr_01.wav")
