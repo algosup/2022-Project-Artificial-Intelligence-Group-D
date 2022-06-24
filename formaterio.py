@@ -1,27 +1,31 @@
 import warnings
 import librosa as lr
 import numpy as np
-import imageio
-import io
-
-from PIL import Image
 
 sample_rate = 8000
 image_width = 500
 image_height = 256
 
-def load_audio_file(path: str):
+# Convert wav file to spectrogram
+def audio_to_spectrogram(path: str):
     warnings.filterwarnings("ignore") # suppress librosa warnings
-    audio_segment, _ = lr.load(path, sr=sample_rate)
+    audio, _ = lr.load(path, sr=sample_rate)
+    if (n_four := len(audio) / 32000) < 1:
+        print("Hard to predict a file with less than 4seconds.")
+        extended_audio = np.concatenate(
+            (
+                audio,
+                np.zeros(32000 - len(audio))
+            )
+        )
+        yield np.expand_dims(spectrogram(extended_audio), axis=2)
+    else:
+        for i in range(0, int(n_four)):
+            start = i*32000
+            end = (i+1)*32000
+            yield np.expand_dims(spectrogram(audio[start:end]), axis=2)
 
-    return audio_segment
-
-def audio_to_io(path: str):
-    audio = load_audio_file(path)
-    spectro = spectrogram(audio)
-    spectro_int: np.matrix = to_integer(spectro)
-    return imageio.imwrite("<bytes>", spectro_int)
-
+# Spectrogram
 def spectrogram(audio_segment):
     # Compute mel-scaled spectrogram image
     hl = audio_segment.shape[0] // image_width
@@ -36,25 +40,6 @@ def spectrogram(audio_segment):
 
     # Normalize and scale
     image_np_scaled_temp = (image_np - np.min(image_np))
-
     image_np_scaled = image_np_scaled_temp / np.max(image_np_scaled_temp)
 
     return image_np_scaled[:, 0:image_width]
-
-def to_integer(image_float: np.matrix):
-    # range (0,1) -> (0,255)
-    image_float_255 = image_float * 255.
-
-    # Convert to uint8 in range [0:255]
-    image_int = image_float_255.astype(np.uint8)
-
-    return image_int
-
-def iospectrogram_to_tensor(image_data: bytes):
-    im = Image.open(io.BytesIO(image_data))
-    im.thumbnail((image_width, image_height))
-
-    tensor = np.array(object=im, dtype=np.float32)
-
-    tensor /= 255
-    return np.expand_dims(tensor, axis=2)

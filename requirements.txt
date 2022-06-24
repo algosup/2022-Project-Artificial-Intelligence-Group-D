@@ -7,9 +7,10 @@
 # -- Uninstall all package(s) --
 # $ pip freeze | xargs pip uninstall -y
 
-matplotlib
 numpy
-pandas
+librosa
+colorama
+scipy
 
 tensorflow == 2.8.0
 # tensorflow-macos == 2.8.0
