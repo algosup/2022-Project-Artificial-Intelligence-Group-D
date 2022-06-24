@@ -12,5 +12,5 @@ librosa
 colorama
 scipy
 
-tensorflow == 2.8.0
+# tensorflow == 2.8.0
 # tensorflow-macos == 2.8.0

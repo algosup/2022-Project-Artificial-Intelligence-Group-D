@@ -50,12 +50,19 @@ def guess(predictions: list) -> None:
             score_en.append(probability)
         predict_len = i
 
-    if n_fr > n_en or score_fr > score_en: 
+    if n_fr > n_en: 
         avg = sum(score_fr) / len(score_fr)
         pretty_print("- French", (avg-0.5)*200, n_fr, predict_len, avg, max(score_fr))
-    else:
+    elif n_fr < n_en:
         avg = sum(score_en) / len(score_en)
         pretty_print("+ English", ((1-avg)-0.5)*200, n_en, predict_len, avg, min(score_en))
+    else:
+        if score_fr > score_en:
+            avg = sum(score_fr) / len(score_fr)
+            pretty_print("- French", (avg-0.5)*200, n_fr, predict_len, avg, max(score_fr))
+        else:
+            avg = sum(score_en) / len(score_en)
+            pretty_print("+ English", ((1-avg)-0.5)*200, n_en, predict_len, avg, min(score_en))
 
 ###########################
 #       !EDIT HERE!       #
