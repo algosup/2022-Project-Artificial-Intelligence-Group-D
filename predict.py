@@ -57,7 +57,7 @@ def guess(predictions: list) -> None:
         avg = sum(score_en) / len(score_en)
         pretty_print("+ English", ((1-avg)-0.5)*200, n_en, predict_len, avg, min(score_en))
     else:
-        if score_fr > score_en:
+        if sum(score_fr) > sum([1-n for n in score_en]):
             avg = sum(score_fr) / len(score_fr)
             pretty_print("- French", (avg-0.5)*200, n_fr, predict_len, avg, max(score_fr))
         else:
